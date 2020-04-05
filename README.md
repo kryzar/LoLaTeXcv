@@ -135,6 +135,7 @@ See my CV to view the result "in the text".
 ### Notes
 
 - `\url` commands are displayed in the same font as the document and not in the ugly mono font.
+- I created `\lltxdotfill` because the space between consecutive dots in `\dotfill` was too short ; you can adjust this space in [the class file](LoLaTeXcv.cls). If you do not like dots, you can use `\hfill` instead of `lltxdotfill` to have a blank space, or any other "filling" command. 
 
 ### Warnings
 
