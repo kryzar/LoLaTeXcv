@@ -104,7 +104,7 @@ The downside is that we manually have to write `\lltxdotfill` in each item. The 
 \end{lltxItemize}
 ```
 
-This is just a slightly modified `itemize` environment. This one has a title, uses bullets as symbols and has no indentation. That's basically it. I use it for… lists. As an example, here is the list of mathematics books I read apart from my degrees.
+This is just a slightly modified `itemize` environment. This one has a title, uses bullets as symbols and has no indentation. That's basically it. I use it for… lists. As an example, here is the list of mathematics books I read outside of my degrees.
 
 ```latex
 \begin{lltxItemize}{Lectures assidues}
