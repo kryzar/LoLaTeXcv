@@ -57,7 +57,7 @@ To display your name and personal information such as your address, phone number
 
 ![`lltxPersonalInfo` displayed](Screenshots/PersonalInfo.png)
 
-This command should be used once, and only once. You may now use the other commands and environments! Each command or environment begins with the prefix `lltx`. They are *all* listed and explained here. See [my own CV](exemple.tex) for a real life example.
+This command should be used once, and only once. You may now use the other commands and environments! Each command or environment begins with the prefix `lltx`. They are *all* listed and explained here. See [my own CV](Example.tex) for a real life example.
 
 ### lltxHistory
 ```latex
@@ -151,4 +151,5 @@ This project is licensed under the GNU General Public License v3.0 - see the [LI
 
 ## Acknowledgements
 - [Florian Dupeyron](https://github.com/fdmysterious) for his numerous advices and the gigantic quantity of time he spent helping me on various projects, including this one.
+- Lola Lanier for helping me correcting many typos and giving her wonderful name to this template.
 - John Frusciante for his [voice](https://youtu.be/bFLs9mi6TK0?t=215) and [music](https://www.youtube.com/watch?v=-G2n6UqOWIo).
