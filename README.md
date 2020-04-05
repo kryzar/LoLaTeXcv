@@ -2,6 +2,7 @@
 
 LoLaTeXcv is another curriculum vitae template for LaTeX. It comes as a single file class. This one is best suited for students who mainly need to write lists. 
 
+![](Screenshots/Overview.png)
 
 ## Installation
 ### The easy way
