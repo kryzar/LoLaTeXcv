@@ -17,12 +17,12 @@ If you have multiple resumes using this class, it can be very painful to have a 
 	- If you're on Windows, run `kpsewhich -var-value=TEXMFHOME$` in a terminal, and the directory is displayed.
 2. Go to the LaTeX installation directory we just located.
 3. If they do not exist, create the sub-folders `tex/latex/base/`.
-4. Open a terminal session in this folder and run `git clone À REMPLIR`. 
+4. Open a terminal session in this folder and run `git clone https://github.com/kryzar/LoLaTeXcv`. 
 
 ## Usage
 ### Getting started
 
-Once you successfully installed LoLaTeXcv.cls, open your resume, and simply call the `LoLaTeXcv` class and your favorite encoding options. You don't need any other package. Then, begin the document. This is what your file must look like.
+Once you successfully installed LoLaTeXcv.cls, open your resume, and simply call the `LoLaTeXcv` class and your favorite encoding options. You don't need any other package. Then, begin the document. This is what your file should look like.
 ```latex
 \documentclass{LoLaTeXcv}
 \includepackage[T1]{fontenc}
@@ -34,7 +34,7 @@ Once you successfully installed LoLaTeXcv.cls, open your resume, and simply call
 \end{document}
 ```
 
-To display your name and personal information such as your address, phone number, email address and god know what, use the `lltxPersonalInfo` command right after `\begin{document}`. The first argument **must** be your name. The three remaining arguments are displayed as followed.
+To display your name and personal information such as your address, phone number, email address and god knows what, use the `lltxPersonalInfo` command right after `\begin{document}`. The first argument **must** be your name. The three remaining arguments are displayed as followed.
 
 
 ```latex
@@ -57,7 +57,7 @@ To display your name and personal information such as your address, phone number
 
 ![`lltxPersonalInfo` displayed](Screenshots/PersonalInfo.png)
 
-This command should be use one time, and only one. You may now use the other commands and environments! Each command or environment begins with the prefix `lltx`. They are *all* listed and explained here. See [my own CV](exemple.tex) for a real life example.
+This command should be used once, and only once. You may now use the other commands and environments! Each command or environment begins with the prefix `lltx`. They are *all* listed and explained here. See [my own CV](exemple.tex) for a real life example.
 
 ### lltxHistory
 ```latex
@@ -83,7 +83,7 @@ This environment is best suited for education and employment history. Here is an
 ```
 !['Education history with `lltxHistory`](Screenshots/EducationHistory.png)
 
-The downside is that we manually have to write `\lltxdotfill` in each item. The good side is that this environment is very adaptive and can be used without `\lltxdotfill`, for example by presenting your content as a list of subsection. This is what I do for computer skills.
+The downside is that we manually have to write `\lltxdotfill` in each item. The plus side is that this environment is very adaptive and can be used without `\lltxdotfill`, for example by presenting your content as a list of subsections. This is what I do for computer skills.
 
 ```latex
 \begin{lltxHistory}{Informatique}
@@ -104,7 +104,7 @@ The downside is that we manually have to write `\lltxdotfill` in each item. The 
 \end{lltxItemize}
 ```
 
-This is just an slightly modified `itemize` environment. This one has a title, uses bullets as symbols and has no indentation. That's basically it. I use it for… lists. As an example, here is the list of mathematics books I read apart from my degrees.
+This is just a slightly modified `itemize` environment. This one has a title, uses bullets as symbols and has no indentation. That's basically it. I use it for… lists. As an example, here is the list of mathematics books I read apart from my degrees.
 
 ```latex
 \begin{lltxItemize}{Lectures assidues}
@@ -126,7 +126,7 @@ This is just an slightly modified `itemize` environment. This one has a title, u
 \lltxTitle{Big section title}
 ```
 
-This is where the fun begins. This simple command was made to divide mu CV into big sections : *Learning*, *Involvement* and *Miscellanea*. It is optional and must be used carefully. Use it because it is relevant, not because it is sexy. This is how it is displayed.
+This is where the fun begins. This simple command was created to divide my CV into big sections : *Learning*, *Involvement* and *Miscellanea*. It is optional and should be used carefully. Use it because it is relevant, not because it is sexy. This is how it is displayed.
 
 ![A simple example of `lltxTitle`](Screenshots/lltxTitle.png)
 
@@ -148,6 +148,6 @@ See my CV to view the result "in the text".
 
 This project is licensed under the GNU General Public License v3.0 - see the [LICENSE.md](LICENSE.md) file for details
 
-## Acknowledgments
+## Acknowledgements
 - [Florian Dupeyron](https://github.com/fdmysterious) for his numerous advices and the gigantic quantity of time he spent helping me on various projects, including this one.
 - John Frusciante for his [voice](https://youtu.be/bFLs9mi6TK0?t=215) and [music](https://www.youtube.com/watch?v=-G2n6UqOWIo).
