@@ -62,10 +62,10 @@ This command should be used once, and only once. You may now use the other comma
 ### lltxHistory
 ```latex
 \begin{lltxHistory}{Section title}
-	\item[Item title] item description \lltxdotfill Place
+	\item[Item title] item description \lltxdotfill Additional info
 	% more items
 	% or 
-	\item[Item title] item description % and no \lltxdotfill and Place
+	\item[Item title] item description % and no \lltxdotfill and Additional info
 \end{lltxHistory}
 ```
 
@@ -140,7 +140,7 @@ See my CV to view the result "in the text".
 ### Warnings
 
 - If you need more sophisticated sections, such as a complex employment history, I suggest you give [Trey Hunner's *resume* class](https://github.com/treyhunner/resume) a shot. 
-- Avoid line jumps in `lltxHistory`, the alignments will be miserable.
+- Avoid line jumps in `lltxHistory`, the alignments will be miserable. If you find a better implementation of `lltxHistory` for the same graphical result, e.g. one that would allow line jumps in the *item description* while still having the *Additional info* on the top right of the item, please contact me or make a pull request so you can contribute.
 
 ## Authors
 - Antoine Hugounet : myself, creator of this repo.
