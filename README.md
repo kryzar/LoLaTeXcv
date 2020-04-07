@@ -2,7 +2,7 @@
 
 LoLaTeXcv is another curriculum vitae template for LaTeX. It comes as a single file class. This one is best suited for students who mainly need to write lists. 
 
-![](Screenshots/Overview.png)
+![](Images/Overview.png)
 
 ## Installation
 ### The easy way
@@ -56,7 +56,7 @@ To display your name and personal information such as your address, phone number
 \end{document}
 ```
 
-![`lltxPersonalInfo` displayed](Screenshots/PersonalInfo.png)
+![`lltxPersonalInfo` displayed](Images/PersonalInfo.png)
 
 This command should be used once, and only once. You may now use the other commands and environments! Each command or environment begins with the prefix `lltx`. They are *all* listed and explained here. See [my own CV](Example.tex) for a real life example.
 
@@ -82,7 +82,7 @@ This environment is best suited for education and employment history. Here is an
 	\item[2015] Bac S, spécialité mathématiques, mention très bien \lltxdotfill Lycée Rocroy St-Vincent de Paul
 \end{lltxHistory}
 ```
-!['Education history with `lltxHistory`](Screenshots/EducationHistory.png)
+!['Education history with `lltxHistory`](Images/EducationHistory.png)
 
 The downside is that we manually have to write `\lltxdotfill` in each item. The plus side is that this environment is very adaptive and can be used without `\lltxdotfill`, for example by presenting your content as a list of subsections. This is what I do for computer skills.
 
@@ -94,7 +94,7 @@ The downside is that we manually have to write `\lltxdotfill` in each item. The 
 \end{lltxHistory}
 ```
 
-!['Computer skills with `lltxHistory`](Screenshots/ComputerSkills.png)
+!['Computer skills with `lltxHistory`](Images/ComputerSkills.png)
 
 ### lltxItemize
 
@@ -119,7 +119,7 @@ This is just a slightly modified `itemize` environment. This one has a title, us
 \end{lltxItemize}
 ```
 
-![A simple example of `lltxItemize`](Screenshots/lltxItemize.png)
+![A simple example of `lltxItemize`](Images/lltxItemize.png)
 
 ### lltxTitle
 
@@ -129,7 +129,7 @@ This is just a slightly modified `itemize` environment. This one has a title, us
 
 This is where the fun begins. This simple command was created to divide my CV into big sections : *Learning*, *Involvement* and *Miscellanea*. It is optional and should be used carefully. Use it because it is relevant, not because it is sexy. This is how it is displayed.
 
-![A simple example of `lltxTitle`](Screenshots/lltxTitle.png)
+![A simple example of `lltxTitle`](Images/lltxTitle.png)
 
 See my CV to view the result "in the text".
 
