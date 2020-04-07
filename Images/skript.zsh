@@ -17,9 +17,8 @@ convert -density 600 "../Example.pdf[1]" -resize 4096x -quality 100 -flatten Exa
 convert  Example-0.png -gravity east -background black -splice 1x0 Example-0.png
 # concatenate horizontally the two images
 convert Example-0.png Example-1.png +append Overview.png
-# add a shadow
-# https://graphicdesign.stackexchange.com/questions/117272/how-to-add-drop-shadow-to-a-picture-via-cli
-convert Overview.png \( +clone -background black -shadow 50x50+0+0 \) +swap -background none -layers merge +repage Overview.png
+# add a black border
+convert Overview.png -bordercolor black -border 1x1 Overview.png
 # clean yourself up
 rm Example-0.png
 rm Example-1.png
