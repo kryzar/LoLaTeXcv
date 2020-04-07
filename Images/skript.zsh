@@ -14,7 +14,7 @@ pdflatex -output-directory=../ ../Example.tex
 convert -density 600 "../Example.pdf[0]" -resize 4096x -quality 100 -flatten Example-0.png
 convert -density 600 "../Example.pdf[1]" -resize 4096x -quality 100 -flatten Example-1.png
 # add a right border to the left image so that the two pages look separated
-convert  Example-0.png -gravity east -background black -splice 2x0 Example-0.png
+convert  Example-0.png -gravity east -background black -splice 1x0 Example-0.png
 # concatenate horizontally the two images
 convert Example-0.png Example-1.png +append Overview.png
 # add a shadow
