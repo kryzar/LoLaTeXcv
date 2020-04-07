@@ -13,9 +13,9 @@ LoLaTeXcv is another curriculum vitae template for LaTeX. It comes as a single f
 If you have multiple resumes using this class, it can be very painful to have a copy of [LoLaTeXcv.cls](LoLaTeXcv.cls) in each directory. The best solution is to have a *unique* copy of this file in the right place, this right place being `TEXINSTALLATIONDIRECTORY/tex/latex/base/LoLaTeXcv/`, according to the mighty [*LaTeX Wikibook*](https://en.wikibooks.org/wiki/LaTeX/Installing_Extra_Packages#Installing_a_package). So, follow these steps.
 
 1. Locate your LaTeX installation directory.
-	- If you're using MacTex on macOS, it's `Users/USERNAME/Library/texmf/` ;
-	- If you're on Unix-type systems, it's `~/texmf/` ;
-	- If you're on Windows, run `kpsewhich -var-value=TEXMFHOME$` in a terminal, and the directory is displayed.
+	- If you are using MacTex on macOS, it is `Users/USERNAME/Library/texmf/` ;
+	- If you are on Unix-type systems, it is `~/texmf/` ;
+	- If you are on Windows, run `kpsewhich -var-value=TEXMFHOME$` in a terminal, and the directory is displayed.
 2. Go to the LaTeX installation directory we just located.
 3. If they do not exist, create the sub-folders `tex/latex/base/`.
 4. Open a terminal session in this folder and run `git clone https://github.com/kryzar/LoLaTeXcv`. 
@@ -23,7 +23,7 @@ If you have multiple resumes using this class, it can be very painful to have a 
 ## Usage
 ### Getting started
 
-Once you successfully installed LoLaTeXcv.cls, open your resume, and simply call the `LoLaTeXcv` class and your favorite encoding options. You don't need any other package. Then, begin the document. This is what your file should look like.
+Once you successfully installed LoLaTeXcv.cls, open your resume, and simply call the `LoLaTeXcv` class and your favorite encoding options. You do not need any other package. Then, begin the document. This is what your file should look like.
 ```latex
 \documentclass{LoLaTeXcv}
 \includepackage[T1]{fontenc}
@@ -105,7 +105,7 @@ The downside is that we manually have to write `\lltxdotfill` in each item. The 
 \end{lltxItemize}
 ```
 
-This is just a slightly modified `itemize` environment. This one has a title, uses bullets as symbols and has no indentation. That's basically it. I use it for… lists. As an example, here is the list of mathematics books I read outside of my degrees.
+This is just a slightly modified `itemize` environment. This one has a title, uses bullets as symbols and has no indentation. That is basically it. I use it for… lists. As an example, here is the list of mathematics books I read outside of my degrees.
 
 ```latex
 \begin{lltxItemize}{Lectures assidues}
