@@ -58,7 +58,7 @@ To display your name and personal information such as your address, phone number
 
 ![`lltxPersonalInfo` displayed](Images/PersonalInfo.png)
 
-This command should be used once, and only once. You may now use the other commands and environments! Each command or environment begins with the prefix `lltx`. They are *all* listed and explained here. See [my own CV](Example.tex) for a real life example.
+This command should be used once, and only once. You may now use the other commands and environments! Each command or environment begins with the prefix `lltx`. They are *all* listed and explained here. See my own CV ([code](Example.tex) and [pdf](Example.pdf)) for a real life example.
 
 ### lltxHistory
 ```latex
