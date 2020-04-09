@@ -130,7 +130,6 @@
 % No indentation.
 \setlength\parindent{0pt}
 
-% Lmodern for \url and not the ugly font.
+% lmodern for \url and not the ugly font.
 % https://tex.stackexchange.com/questions/261434/changing-url-font
 \urlstyle{same}
-
