@@ -132,6 +132,5 @@
 
 % Lmodern for \url and not the ugly font.
 % https://tex.stackexchange.com/questions/261434/changing-url-font
-\RequirePackage{hyperref}
 \urlstyle{same}
 
