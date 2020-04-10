@@ -35,7 +35,7 @@ Once you successfully installed LoLaTeXcv.cls, open your resume, and simply call
 \end{document}
 ```
 
-To display your name and personal information such as your address, phone number, email address and god knows what, use the `lltxPersonalInfo` command right after `\begin{document}`. The first argument **must** be your name. The three remaining arguments are displayed as followed.
+To display your name and personal information such as your address, phone number, email address or anything else, use the `lltxPersonalInfo` command right after `\begin{document}`. The first argument **must** be your name. The three remaining arguments are displayed as followed.
 
 
 ```latex
