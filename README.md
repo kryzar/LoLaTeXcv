@@ -1,33 +1,33 @@
 # LoLaTeXcv, a curriculum vitae template for LaTeX
 
-LoLaTeXcv is another curriculum vitae template for LaTeX. It comes as a single file class. This one is best suited for students who mainly need to write lists. 
+*LoLaTeXcv* is curriculum vitae template for LaTeX. It comes as a single file class, and might be great for you if you like organizing your curriculum vitae using lists.
 
 [![](Images/Overview.png)](Example.pdf)
 
 ## Installation
 ### The easy way
 
-1. Download the [LoLaTeXcv.cls](LoLaTeXcv.cls) file and put it in the directory where your resume is.
+1. Download the file [LoLaTeXcv.cls](LoLaTeXcv.cls) and put it in the same directory as your LaTeX curriculum vitae.
 
 ### The smart way
-If you have multiple resumes using this class, it can be very painful to have a copy of [LoLaTeXcv.cls](LoLaTeXcv.cls) in each directory. The best solution is to have a *unique* copy of this file in the right place, this right place being `TEXINSTALLATIONDIRECTORY/tex/latex/base/LoLaTeXcv/`, according to the mighty [*LaTeX Wikibook*](https://en.wikibooks.org/wiki/LaTeX/Installing_Extra_Packages#Installing_a_package). So, follow these steps.
+If you have multiple curricula vitae using this class, it can be very painful to have a copy of [LoLaTeXcv.cls](LoLaTeXcv.cls) in each directory. The best solution is to have a *unique* copy of this file, in the right place, that is in `TeXInstallationDirectory/tex/latex/base/LoLaTeXcv/`, as dictated by the mighty [*LaTeX Wikibook*](https://en.wikibooks.org/wiki/LaTeX/Installing_Extra_Packages#Installing_a_package). Now please, follow these steps.
 
 1. Locate your LaTeX installation directory.
 	- If you are using MacTex on macOS, it is `Users/USERNAME/Library/texmf/` ;
 	- If you are on Unix-type systems, it is `~/texmf/` ;
 	- If you are on Windows, run `kpsewhich -var-value=TEXMFHOME$` in a terminal, and the directory is displayed.
-2. Go to the LaTeX installation directory we just located.
-3. If they do not exist, create the sub-folders `tex/latex/base/`.
-4. Open a terminal session in this folder and run `git clone https://github.com/kryzar/LoLaTeXcv`. 
+2. If they do not exist, create the sub-directories `tex/latex/base/` in this directory.
+3. Open a terminal session in this directory and run `git clone https://github.com/kryzar/LoLaTeXcv`. 
 
 ## Usage
 ### Getting started
 
-Once you successfully installed LoLaTeXcv.cls, open your resume, and simply call the `LoLaTeXcv` class and your favorite encoding options. You do not need any other package. Then, begin the document. This is what your file should look like.
+Once you successfully installed the class, open your LaTeX curriculum vitae, and use the `LoLaTeXcv` document class. You must manage encoding and language as well. You do not need any other package. You may afterwards begin the document. This is what your file should look like.
 ```latex
 \documentclass{LoLaTeXcv}
 \includepackage[T1]{fontenc}
 \includepackage[utf8]{inputenc}
+% maybe a language package e.g. \usepackage[french]{babel}
 
 \begin{document}
 
@@ -35,8 +35,10 @@ Once you successfully installed LoLaTeXcv.cls, open your resume, and simply call
 \end{document}
 ```
 
-To display your name and personal information such as your address, phone number, email address or anything else, use the `lltxPersonalInfo` command right after `\begin{document}`. The first argument **must** be your name. The three remaining arguments are displayed as followed.
-
+To display your name and personal information (your address, phone number, email address or anything else), use the `lltxPersonalInfo`.
+- This command should be used *right after* `\begin{document}`.
+- This command should be used once, and only once.
+- The first argument of `lltwPersonalInfo` *must* be your name ; the three remaining arguments are displayed as followed.
 
 ```latex
 \documentclass{LoLaTeXcv}
@@ -58,7 +60,7 @@ To display your name and personal information such as your address, phone number
 
 ![`lltxPersonalInfo` displayed](Images/PersonalInfo.png)
 
-This command should be used once, and only once. You may now use the other commands and environments! Each command or environment begins with the prefix `lltx`. They are *all* listed and explained here. See my own CV ([code](Example.tex) and [pdf](Example.pdf)) for a real life example.
+You may now use the other commands and environments! Each command or environment begins with the prefix `lltx` and is explained here. See my own CV ([code](Example.tex) and [pdf](Example.pdf)) for a real life example.
 
 ### lltxHistory
 ```latex
@@ -70,7 +72,7 @@ This command should be used once, and only once. You may now use the other comma
 \end{lltxHistory}
 ```
 
-This environment is best suited for education and employment history. Here is an example from my own resume.
+The `lltwHistory` environment is best suited for education and employment history. Item descriptions are horizontally aligned and anything written after `\lltxdotfill` is pushed to the end of the line. Here is an example from my own curriculum vitae.
 
 ```latex
 \begin{lltxHistory}{Cursus}
@@ -84,7 +86,7 @@ This environment is best suited for education and employment history. Here is an
 ```
 !['Education history with `lltxHistory`](Images/EducationHistory.png)
 
-The downside is that we manually have to write `\lltxdotfill` in each item. The plus side is that this environment is very adaptive and can be used without `\lltxdotfill`, for example by presenting your content as a list of subsections. This is what I do for computer skills.
+This environment is very adaptive and can be used without `\lltxdotfill`, for example to organize your content as a list of subsections. This is what I do for computer skills.
 
 ```latex
 \begin{lltxHistory}{Informatique}
@@ -105,7 +107,7 @@ The downside is that we manually have to write `\lltxdotfill` in each item. The 
 \end{lltxItemize}
 ```
 
-This is just a slightly modified `itemize` environment. This one has a title, uses bullets as symbols and has no indentation. That is basically it. I use it for… lists. As an example, here is the list of mathematics books I read outside of my degrees.
+The `lltxItemize`environment is a modified `itemize` environment. It has a title, uses bullets as symbols and has no indentation. As an example, here is the list of mathematics books I read outside of my degrees.
 
 ```latex
 \begin{lltxItemize}{Lectures assidues}
@@ -127,7 +129,7 @@ This is just a slightly modified `itemize` environment. This one has a title, us
 \lltxTitle{Big section title}
 ```
 
-This is where the fun begins. This simple command was created to divide my CV into big sections : *Learning*, *Involvement* and *Miscellanea*. It is optional and should be used carefully. Use it because it is relevant, not because it is sexy. This is how it is displayed.
+The `lltxTitle` command<sup>This is where the fun begins.</sup> was created to organize a curriculum vitae into thematic parts. This is what I came up with in my curriculum vitae : *Learning*, *Involvement* and *Miscellanea*. It is optional and should be used carefully. Use it because it is relevant, not because it is sexy. This is how it is displayed.
 
 ![A simple example of `lltxTitle`](Images/lltxTitle.png)
 
@@ -135,13 +137,13 @@ See my CV to view the result "in the text".
 
 ### Notes
 
-- `\url` commands are displayed in the same font as the document and not in the ugly mono font.
-- I created `\lltxdotfill` because the space between consecutive dots in `\dotfill` was too short ; you can adjust this space in [the class file](LoLaTeXcv.cls). If you do not like dots, you can use `\hfill` instead of `lltxdotfill` to have a blank space, or any other "filling" command. 
+- `\url` commands are displayed in the same font as the document, not in the ~~ugly~~ traditional monospaced font.
+- I created `\lltxdotfill` because the space between consecutive dots in `\dotfill` was too short. You can adjust the space used by `lltxdotfill` by changing it directly in the class file [LoLaTeX.cls](LoLaTeXcv.cls). If you do not like dots, you can use `\hfill` instead of `lltxdotfill` (you will get a blank space), or any other "filling" command. 
 
 ### Warnings
 
-- If you need more sophisticated sections, such as a complex employment history, I suggest you give [Trey Hunner's *resume* class](https://github.com/treyhunner/resume) a shot. 
-- Avoid line jumps in `lltxHistory`, the alignments will be miserable. If you find a better implementation of `lltxHistory` for the same graphical result, e.g. one that would allow line jumps in the *item description* while still having the *Additional info* on the top right of the item, please contact me or make a pull request so you can contribute.
+- If you need more sophisticated sections, such as a complex employment history, I suggest you give [Trey Hunner's *curriculum vitae* class](https://github.com/treyhunner/resume) a try. 
+- You should avoid jumping lines in `lltxHistory` — the alignments will be mediocre at best. If you find a better implementation of `lltxHistory`, that is one that would allow line jumps in the *item description* while still having the *Additional info* on the top right of the item, please contact me or make a pull request so you can contribute.
 
 ## Authors
 - Antoine Hugounet : myself, creator of this repo.
