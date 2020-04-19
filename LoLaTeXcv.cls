@@ -1,5 +1,6 @@
 % LoLaTeXcv.cls
 % Antoine Hugounet
+% https://github.com/kryzar/LoLaTeXcv
 % https://www.overleaf.com/learn/latex/Writing_your_own_class
 % https://en.wikibooks.org/wiki/LaTeX/Installing_Extra_Packages#Installing_a_package
 
@@ -7,6 +8,8 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{LoLaTeXcv}[2020/03/13 LoLaTeXcv]
 \LoadClass[11pt, a4paper, oneside]{report}
+
+% PACKAGES
 \RequirePackage[left=35px, top=60px, right=35px, bottom=50px]{geometry}
 \RequirePackage{enumitem}  
 \RequirePackage{environ}
@@ -108,7 +111,8 @@
 	\vspace{1em}
 	\noindent
 	\textbf{#1}
-	\begin{itemize}[leftmargin=*]
+	\begin{itemize}[
+		leftmargin=*]
 		\BODY
 	\end{itemize}
 }
