@@ -105,8 +105,8 @@
 %% \end{lltxItemize}
 %% It's just an itemize with a Title.
 %%% change the symbols of first and second levels of itemize
-\setlist[itemize, 1]{label={$\bullet$}}
-\setlist[itemize, 2]{label={$\star$}}
+\setlist[itemize, 1]{label=—}
+\setlist[itemize, 2]{label=$ast$}
 \NewEnviron{lltxItemize}[1]{
 	\vspace{1em}
 	\noindent
@@ -136,4 +136,4 @@
 
 % lmodern for \url and not the ugly font.
 % https://tex.stackexchange.com/questions/261434/changing-url-font
-\urlstyle{same}
+% \urlstyle{same}
