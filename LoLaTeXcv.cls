@@ -14,6 +14,7 @@
 \RequirePackage{enumitem}  
 \RequirePackage{environ}
 \RequirePackage[hidelinks]{hyperref}
+\RequirePackage{ifthen}
 \RequirePackage{lmodern}
 \RequirePackage{tabularx}
 \RequirePackage{xcolor}
@@ -118,10 +119,6 @@
 	\end{itemize}
 }
 
-%% \NTS{Note to self}
-%% Display bold red notes directly in the document, like "Add this" or "Change that".
-\newcommand{\NTS}[1]{\textcolor{red}{\textbf{#1}}}
-
 %% \begin{lltxTabular}{SectionTitle}
 %%		year & title and info & place
 %% \end{lltxTabular}
@@ -136,6 +133,29 @@
 		\end{tabularx}
 	\end{center}
 }
+
+%% from https://github.com/treyhunner/resume/blob/master/resume.cls
+\newenvironment{lltxProItemize}[4]{
+	%%%%%%%%%%%%%%%%%%%%%% Default Layout: %%%%%%%%%%%%%%%%%%%%%%%%
+	%%    Employer (bold)                     Dates (regular)    %%
+	%%    Title (emphasis)                Location (emphasis)    %%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	{\textit{#1}}	\hfill	{#2} % Stop a space
+	\ifthenelse{\equal{#3}{}}{}{
+	\\
+	#3	\hfill	#4 % Stop a space
+	}\smallskip
+	% \cdot used for bullets, items non-indented
+	\begin{list}{$\cdot$}{\leftmargin=0em}
+	\itemsep -0.5em \vspace{-0.5em}
+}{
+	\end{list}
+	\vspace{0.5em}
+}
+
+%% \NTS{Note to self}
+%% Display bold red notes directly in the document, like "Add this" or "Change that".
+\newcommand{\NTS}[1]{\textcolor{red}{\textbf{#1}}}
 
 % COSMETICS
 
