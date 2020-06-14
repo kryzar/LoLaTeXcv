@@ -10,14 +10,17 @@
 \LoadClass[11pt, a4paper, oneside]{report}
 
 % PACKAGES
-\RequirePackage[left=30px, top=60px, right=30px, bottom=50px]{geometry}
+\RequirePackage[left=45px, top=60px, right=45px, bottom=50px]{geometry}
 \RequirePackage{enumitem}  
 \RequirePackage{environ}
 \RequirePackage[hidelinks]{hyperref}
 \RequirePackage{ifthen}
 \RequirePackage{lmodern}
-\RequirePackage{tabularx}
 \RequirePackage{xcolor}
+
+% GENERAL SETTINGS
+\setlist[itemize]{leftmargin=*}
+\setlist[enumerate]{leftmargin=*}
 
 % ENVIRONMENTS AND COMMANDS
 % All commands begin with lltx and are followed by a cap. letter.
@@ -51,19 +54,26 @@
 	\end{center}
 }
 
-%% \lltxTitle{title}
+%% \lltxSection{title}
 %% Section titles such as "Education" in order to different topics.
 %%% Horizontal line.
 \newcommand*\lltxRuleline[1]{
 	\par\noindent\raisebox{.8ex}{\makebox[\linewidth]{\hrulefill\hspace{1ex}\raisebox{-0.5ex}{#1}\hspace{1ex}\hrulefill}}
 }
 %%% The command itself.
-\newcommand{\lltxTitle}[1]{
+\newcommand{\lltxSection}[1]{
 	\begin{center}
 		\vspace{15px}
 		\LARGE \lltxRuleline{\textit{#1}}
 		\vspace{-30px}
 	\end{center}
+}
+
+%% \lltxSubSection
+\newcommand{\lltxSubSection}[1]{
+	\vspace{1em}
+	\noindent
+	\large \textbf{#1} \normalsize \\
 }
 
 %% \begin{lltxHistory}{SectionTitle}
@@ -87,7 +97,7 @@
 		\setbox0=\hbox{\BODY}
 	}
 	\noindent
-	\textbf{#1}
+	\large \textbf{#1} \normalsize
 	%%% After the magic, comes the assembly of the command.
 	%%% See the enumitem package.
 	\begin{description}[
@@ -112,46 +122,39 @@
 \NewEnviron{lltxItemize}[1]{
 	\vspace{1em}
 	\noindent
-	\textbf{#1}
-	\begin{itemize}[
-		leftmargin=*]
+	\large \textbf{#1} \normalsize
+	\begin{itemize}
 		\BODY
 	\end{itemize}
 }
 
-%% \begin{lltxTabular}{SectionTitle}
-%%		year & title and info & place
-%% \end{lltxTabular}
-%% Like lltxItemize but with linejumps and no \dotfill possible.
-\NewEnviron{lltxTabular}[1]{
+%% from https://github.com/treyhunner/resume/blob/master/resume.cls
+%% #1: compagny name
+%% #2: job title
+%% #3: time period
+%% #4: location
+\NewEnviron{lltxProItemize}[4]{
+	{#1} \hfill {{#3}, {#4}} \\
+	{\textit{#2}}
+	\begin{itemize}
+		\BODY
+	\end{itemize}
 	\vspace{1em}
-	\noindent
-	\textbf{#1}
-	\begin{center}
-		\begin{tabularx}{\textwidth}{l X r}
-			\BODY
-		\end{tabularx}
-	\end{center}
 }
 
-%% from https://github.com/treyhunner/resume/blob/master/resume.cls
-\newenvironment{lltxProItemize}[4]{
-	%%%%%%%%%%%%%%%%%%%%%% Default Layout: %%%%%%%%%%%%%%%%%%%%%%%%
-	%%    Employer (bold)                     Dates (regular)    %%
-	%%    Title (emphasis)                Location (emphasis)    %%
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	{\textit{#1}}	\hfill	{#2} % Stop a space
-	\ifthenelse{\equal{#3}{}}{}{
-	\\
-	#3	\hfill	#4 % Stop a space
-	}\smallskip
-	% \cdot used for bullets, items non-indented
-	\begin{list}{$\cdot$}{\leftmargin=0em}
-	\itemsep -0.5em \vspace{-0.5em}
-}{
-	\end{list}
-	\vspace{0.5em}
-}
+\iffalse
+\lltxSubSection{Parcours professionnel}
+\begin{lltxProItemize}{
+		Sorbonne Université, UFR de mathématiques}{
+		2020 (été)}{
+		Développement d'un assistant de preuve pédagogique basé sur Lean}{
+		Paris}
+	\item Co-développement d'un assistant de preuve pédagogique basé sur \textit{Lean} (\url{https://leanprover.github.io/about/}), avec Frédéric Le Roux (IMJ-PRG) et Florian Dupeyron (étudiant en Master 1 d'informatique, Sorbonne Université).
+	\item Le projet part du constat suivant : une grande partie des élèves de licence ne parvient pas à acquérir les bases syntaxiques de la démonstration, ce qui les empêche de progresser jusqu'aux preuves plus difficiles. Nous voulons proposer un logiciel d'entraînement à la démonstration en ajoutant deux couches à Lean : une couche sémantique dans laquelle l'élève indique le plus précisément possible les étapes de la démonstrations (p.-ex. on se donne deux groupes, puis un morphisme, puis un élément vérifiant telle propriété, etc) et une couche graphique rendant l'utilisation de Lean transparente.
+	\item Le dépôt git du projet se situe à \url{https://github.com/FredericLeRoux/DEAduction} et nous utilisons Python car ce langage est le plus utilisé parmi les étudiants de Mathématiques, ce qui faciliterait leur éventuel investissement.
+	\item Cette mission de développement est rémunérée par l'UFR de Mathématiques de Sorbonne Université.
+\end{lltxProItemize}
+\fi
 
 %% \NTS{Note to self}
 %% Display bold red notes directly in the document, like "Add this" or "Change that".
