@@ -10,7 +10,7 @@
 \LoadClass[11pt, a4paper, oneside]{report}
 
 % PACKAGES
-\RequirePackage[left=35px, top=60px, right=35px, bottom=50px]{geometry}
+\RequirePackage[left=30px, top=60px, right=30px, bottom=40px]{geometry}
 \RequirePackage{enumitem}  
 \RequirePackage{environ}
 \RequirePackage[hidelinks]{hyperref}
