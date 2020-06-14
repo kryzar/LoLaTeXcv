@@ -10,11 +10,12 @@
 \LoadClass[11pt, a4paper, oneside]{report}
 
 % PACKAGES
-\RequirePackage[left=35px, top=60px, right=35px, bottom=50px]{geometry}
+\RequirePackage[left=30px, top=60px, right=30px, bottom=50px]{geometry}
 \RequirePackage{enumitem}  
 \RequirePackage{environ}
 \RequirePackage[hidelinks]{hyperref}
 \RequirePackage{lmodern}
+\RequirePackage{tabularx}
 \RequirePackage{xcolor}
 
 % ENVIRONMENTS AND COMMANDS
@@ -120,6 +121,21 @@
 %% \NTS{Note to self}
 %% Display bold red notes directly in the document, like "Add this" or "Change that".
 \newcommand{\NTS}[1]{\textcolor{red}{\textbf{#1}}}
+
+%% \begin{lltxTabular}{SectionTitle}
+%%		year & title and info & place
+%% \end{lltxTabular}
+%% Like lltxItemize but with linejumps and no \dotfill possible.
+\NewEnviron{lltxTabular}[1]{
+	\vspace{1em}
+	\noindent
+	\textbf{#1}
+	\begin{center}
+		\begin{tabularx}{\textwidth}{l X r}
+			\BODY
+		\end{tabularx}
+	\end{center}
+}
 
 % COSMETICS
 
