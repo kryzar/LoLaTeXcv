@@ -14,9 +14,9 @@
 \RequirePackage{enumitem}  
 \RequirePackage{environ}
 \RequirePackage[hidelinks]{hyperref}
-\RequirePackage{ifthen}
 \RequirePackage{lmodern}
 \RequirePackage{xcolor}
+\RequirePackage{xifthen}
 
 % GENERAL SETTINGS
 \setlist[itemize]{leftmargin=*}
@@ -73,7 +73,7 @@
 \newcommand{\lltxSubSection}[1]{
 	\vspace{1em}
 	\noindent
-	\large \textbf{#1} \normalsize \\
+	\normalsize \textbf{#1} \normalsize \\
 }
 
 %% \begin{lltxHistory}{SectionTitle}
@@ -97,7 +97,7 @@
 		\setbox0=\hbox{\BODY}
 	}
 	\noindent
-	\large \textbf{#1} \normalsize
+	\normalsize \textbf{#1} \normalsize
 	%%% After the magic, comes the assembly of the command.
 	%%% See the enumitem package.
 	\begin{description}[
@@ -122,39 +122,35 @@
 \NewEnviron{lltxItemize}[1]{
 	\vspace{1em}
 	\noindent
-	\large \textbf{#1} \normalsize
+	\normalsize \textbf{#1} \normalsize
 	\begin{itemize}
 		\BODY
 	\end{itemize}
 }
 
-%% from https://github.com/treyhunner/resume/blob/master/resume.cls
-%% #1: compagny name
-%% #2: job title
+%% \begin{lltxProItemize}[Job title]{Compagny}{Time period}{Location}
+%%		\item description
+%%		\item some other description
+%% \end{lltxProItemize}
+%% inspired from https://github.com/treyhunner/resume/blob/master/resume.cls
+%% #1: job title, between []
+%% #2: compagny
 %% #3: time period
 %% #4: location
-\NewEnviron{lltxProItemize}[4]{
-	{#1} \hfill {{#3}, {#4}} \\
-	{\textit{#2}}
+\NewEnviron{lltxProItemize}[4][]{
+	#2 \lltxdotfill #3, #4
+	\ifthenelse{\isempty{#1}}{ % if #1 is empty, then 
+	}
+		% do nothing
+	{% else, then
+		\newline \textit{#1}
+	}
 	\begin{itemize}
 		\BODY
 	\end{itemize}
 	\vspace{1em}
 }
 
-\iffalse
-\lltxSubSection{Parcours professionnel}
-\begin{lltxProItemize}{
-		Sorbonne Université, UFR de mathématiques}{
-		2020 (été)}{
-		Développement d'un assistant de preuve pédagogique basé sur Lean}{
-		Paris}
-	\item Co-développement d'un assistant de preuve pédagogique basé sur \textit{Lean} (\url{https://leanprover.github.io/about/}), avec Frédéric Le Roux (IMJ-PRG) et Florian Dupeyron (étudiant en Master 1 d'informatique, Sorbonne Université).
-	\item Le projet part du constat suivant : une grande partie des élèves de licence ne parvient pas à acquérir les bases syntaxiques de la démonstration, ce qui les empêche de progresser jusqu'aux preuves plus difficiles. Nous voulons proposer un logiciel d'entraînement à la démonstration en ajoutant deux couches à Lean : une couche sémantique dans laquelle l'élève indique le plus précisément possible les étapes de la démonstrations (p.-ex. on se donne deux groupes, puis un morphisme, puis un élément vérifiant telle propriété, etc) et une couche graphique rendant l'utilisation de Lean transparente.
-	\item Le dépôt git du projet se situe à \url{https://github.com/FredericLeRoux/DEAduction} et nous utilisons Python car ce langage est le plus utilisé parmi les étudiants de Mathématiques, ce qui faciliterait leur éventuel investissement.
-	\item Cette mission de développement est rémunérée par l'UFR de Mathématiques de Sorbonne Université.
-\end{lltxProItemize}
-\fi
 
 %% \NTS{Note to self}
 %% Display bold red notes directly in the document, like "Add this" or "Change that".
