@@ -79,13 +79,13 @@
 	\begin{center}
 		\vspace{15px}
 		\LARGE \lltxRuleline{\textit{#1}} \normalsize
-		\vspace{-2em}
+		\vspace{-3em}
 	\end{center}
 }
 
 %% \lltxSubSection
 \newcommand{\lltxSubSection}[1]{
-	\vspace{1em}
+	\vspace{1.5em}
 	\noindent \textbf{#1}
 }
 
