@@ -10,7 +10,7 @@
 \LoadClass[11pt, a4paper, oneside]{report}
 
 % PACKAGES
-\RequirePackage[left=45px, top=60px, right=45px, bottom=50px]{geometry}
+\RequirePackage[left=50px, top=70px, right=50px, bottom=70px]{geometry}
 \RequirePackage{enumitem}  
 \RequirePackage{environ}
 \RequirePackage{eqparbox}
@@ -134,7 +134,7 @@
 	{% else, then
 		\newline \textit{#1}
 	}
-	\begin{itemize}
+	\begin{itemize}[leftmargin=!, label=$\cdot$]
 		\BODY
 	\end{itemize}
 }
