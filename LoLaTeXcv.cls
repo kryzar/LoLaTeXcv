@@ -72,8 +72,7 @@
 %% \lltxSubSection
 \newcommand{\lltxSubSection}[1]{
 	\vspace{1em}
-	\noindent
-	\normalsize \textbf{#1} \normalsize \\
+	\noindent \textbf{#1} \\
 }
 
 %% \begin{lltxHistory}{SectionTitle}
@@ -96,8 +95,7 @@
 		}
 		\setbox0=\hbox{\BODY}
 	}
-	\noindent
-	\normalsize \textbf{#1} \normalsize
+	\noindent \textbf{#1}
 	%%% After the magic, comes the assembly of the command.
 	%%% See the enumitem package.
 	\begin{description}[
@@ -121,8 +119,7 @@
 \setlist[itemize, 2]{label=$ast$}
 \NewEnviron{lltxItemize}[1]{
 	\vspace{1em}
-	\noindent
-	\normalsize \textbf{#1} \normalsize
+	\noindent \textbf{#1} 
 	\begin{itemize}
 		\BODY
 	\end{itemize}
@@ -133,7 +130,7 @@
 %%		\item some other description
 %% \end{lltxProItemize}
 %% inspired from https://github.com/treyhunner/resume/blob/master/resume.cls
-%% #1: job title, between []
+%% #1: job title, optional, between []
 %% #2: compagny
 %% #3: time period
 %% #4: location
