@@ -22,6 +22,18 @@
 \setlist[itemize]{leftmargin=*}
 \setlist[enumerate]{leftmargin=*}
 
+%% Adjust the spacing of two consecutive dots in \dotfill.
+\makeatletter
+	\newcommand \lltxdotfill {\leavevmode \cleaders \hb@xt@ 1em{\hss .\hss }\hfill \kern \z@}
+\makeatother
+%% No page numbers.
+\pagenumbering{gobble}
+% No indentation.
+\setlength\parindent{0pt}
+%% lmodern for \url and not the ugly font.
+%% https://tex.stackexchange.com/questions/261434/changing-url-font
+%% \urlstyle{same}
+
 % ENVIRONMENTS AND COMMANDS
 % All commands begin with lltx and are followed by a cap. letter.
 
@@ -54,8 +66,8 @@
 	\end{center}
 }
 
-%% \lltxSection{title}
-%% Section titles such as "Education" in order to different topics.
+%% \lltxSection{Section name}
+%% Section names such as "Education" in order to different topics.
 %%% Horizontal line.
 \newcommand*\lltxRuleline[1]{
 	\par\noindent\raisebox{.8ex}{\makebox[\linewidth]{\hrulefill\hspace{1ex}\raisebox{-0.5ex}{#1}\hspace{1ex}\hrulefill}}
@@ -85,8 +97,7 @@
 %%% First, there is magic to get the longest ItemTitle.
 \newlength\lltxWidest
 \makeatletter
-%%% Somehow newenvrionment does not work.
-\NewEnviron{lltxHistory}[1]{
+\NewEnviron{lltxHistory}[1]{ % \newenvironment would not work
 	\vbox{
 		\global\setlength\lltxWidest{0pt}
 		\def\item[##1]{
@@ -115,8 +126,6 @@
 %% \end{lltxItemize}
 %% It's just an itemize with a Title.
 %%% change the symbols of first and second levels of itemize
-\setlist[itemize, 1]{label=—}
-\setlist[itemize, 2]{label=$ast$}
 \NewEnviron{lltxItemize}[1]{
 	\vspace{1em}
 	\noindent \textbf{#1} 
@@ -152,20 +161,3 @@
 %% \NTS{Note to self}
 %% Display bold red notes directly in the document, like "Add this" or "Change that".
 \newcommand{\NTS}[1]{\textcolor{red}{\textbf{#1}}}
-
-% COSMETICS
-
-%% Adjust the spacing of two consecutive dots in \dotfill.
-\makeatletter
-	\newcommand \lltxdotfill {\leavevmode \cleaders \hb@xt@ 1em{\hss .\hss }\hfill \kern \z@}
-\makeatother
-
-%% No page numbers.
-\pagenumbering{gobble}
-
-% No indentation.
-\setlength\parindent{0pt}
-
-% lmodern for \url and not the ugly font.
-% https://tex.stackexchange.com/questions/261434/changing-url-font
-% \urlstyle{same}
