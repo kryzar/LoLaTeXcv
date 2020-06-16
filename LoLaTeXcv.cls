@@ -20,9 +20,10 @@
 \RequirePackage{xifthen}
 
 % GENERAL SETTINGS
+%% no indent on lists, numerate, description
 \setlist[itemize]{leftmargin=*}
 \setlist[enumerate]{leftmargin=*}
-
+\setlist[description]{leftmargin=*}
 %% Adjust the spacing of two consecutive dots in \dotfill.
 \makeatletter
 	\newcommand \lltxdotfill {\leavevmode \cleaders \hb@xt@ 1em{\hss .\hss }\hfill \kern \z@}
@@ -77,8 +78,8 @@
 \newcommand{\lltxSection}[1]{
 	\begin{center}
 		\vspace{15px}
-		\LARGE \lltxRuleline{\textit{#1}}
-		\vspace{-30px}
+		\LARGE \lltxRuleline{\textit{#1}} \normalsize
+		\vspace{-2em}
 	\end{center}
 }
 
@@ -107,9 +108,7 @@
 %% \end{lltxItemize}
 %% It's just an itemize with a Title.
 %%% change the symbols of first and second levels of itemize
-\NewEnviron{lltxItemize}[1]{
-	\vspace{1em}
-	\noindent \textbf{#1} 
+\NewEnviron{lltxItemize}{
 	\begin{itemize}
 		\BODY
 	\end{itemize}
@@ -125,6 +124,9 @@
 %% #3: time period
 %% #4: location
 \NewEnviron{lltxProItemize}[4][]{
+	% leave an empty line for the linejump, yup it is ugly
+
+	\vspace{4px}
 	#2 \lltxdotfill #3, #4
 	\ifthenelse{\isempty{#1}}{ % if #1 is empty, then 
 	}
@@ -135,7 +137,19 @@
 	\begin{itemize}
 		\BODY
 	\end{itemize}
-	\vspace{1em}
+}
+
+\newenvironment{lltxProItemizeTest}[4][]{
+
+	#2 \lltxdotfill #3, #4
+	\ifthenelse{\isempty{#1}}{ % if #1 is empty, then 
+	}
+		% do nothing
+	{% else, then
+		\newline \textit{#1}
+	}
+	\begin{itemize}}{
+	\end{itemize}
 }
 
 
