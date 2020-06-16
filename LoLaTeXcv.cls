@@ -13,6 +13,7 @@
 \RequirePackage[left=45px, top=60px, right=45px, bottom=50px]{geometry}
 \RequirePackage{enumitem}  
 \RequirePackage{environ}
+\RequirePackage{eqparbox}
 \RequirePackage[hidelinks]{hyperref}
 \RequirePackage{lmodern}
 \RequirePackage{xcolor}
@@ -84,42 +85,22 @@
 %% \lltxSubSection
 \newcommand{\lltxSubSection}[1]{
 	\vspace{1em}
-	\noindent \textbf{#1} \\
+	\noindent \textbf{#1}
 }
 
 %% \begin{lltxHistory}{SectionTitle}
 %%		\item[ItemTitle] ItemDescription 
 %% \end{lltxHistory}
 %% Classical history section, suited for education, for exemple.
-%% The hard part was setting a constant length of the ItemTitle part. 
 %% This length is determined by the longest ItemTitle.
 %% https://tex.stackexchange.com/questions/130097/automatically-set-description-list-labelwidth-based-on-widest-label.
-%%% First, there is magic to get the longest ItemTitle.
-\newlength\lltxWidest
-\makeatletter
-\NewEnviron{lltxHistory}[1]{ % \newenvironment would not work
-	\vbox{
-		\global\setlength\lltxWidest{0pt}
-		\def\item[##1]{
-			\settowidth\@tempdima{\textbf{##1}}
-			\ifdim\@tempdima>\lltxWidest\global\setlength\lltxWidest{\@tempdima}\fi
-		}
-		\setbox0=\hbox{\BODY}
-	}
-	\noindent \textbf{#1}
-	%%% After the magic, comes the assembly of the command.
-	%%% See the enumitem package.
-	\begin{description}[
-		font = \normalfont,
-		labelindent = 0px,
-		labelwidth = \lltxWidest,
-		%%% 10px space between ItemTitle and ItemDescription
-		%%% Can be changed at will.
-		labelsep = 10px]
-	\BODY
-	\end{description}
+\newlist{lltxHistory}{description}{1}
+\setlist[lltxHistory]{
+    format = \normalfont\lltxHistorylabel,
+    labelwidth = 0.3cm+\eqboxwidth{listlabel@\EnumitemId},
+    leftmargin = !,
 }
-\makeatother
+\newcommand\lltxHistorylabel[2][l]{\eqmakebox[listlabel@\EnumitemId][#1]{#2}}
 
 %% \begin{lltxItemize}{SectionTitle}
 %%		\item
