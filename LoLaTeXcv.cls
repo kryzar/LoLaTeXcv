@@ -89,19 +89,19 @@
 	\noindent \textbf{#1}
 }
 
-%% \begin{lltxHistory}{SectionTitle}
+%% \begin{lltxDescription}{SectionTitle}
 %%		\item[ItemTitle] ItemDescription 
-%% \end{lltxHistory}
+%% \end{lltxDescription}
 %% Classical history section, suited for education, for exemple.
 %% This length is determined by the longest ItemTitle.
 %% https://tex.stackexchange.com/questions/130097/automatically-set-description-list-labelwidth-based-on-widest-label.
-\newlist{lltxHistory}{description}{1}
-\setlist[lltxHistory]{
-    format = \normalfont\lltxHistorylabel,
+\newlist{lltxDescription}{description}{1}
+\setlist[lltxDescription]{
+    format = \normalfont\lltxDescriptionlabel,
     labelwidth = 0.3cm+\eqboxwidth{listlabel@\EnumitemId},
     leftmargin = !,
 }
-\newcommand\lltxHistorylabel[2][l]{\eqmakebox[listlabel@\EnumitemId][#1]{#2}}
+\newcommand\lltxDescriptionlabel[2][l]{\eqmakebox[listlabel@\EnumitemId][#1]{#2}}
 
 %% \begin{lltxItemize}{SectionTitle}
 %%		\item
