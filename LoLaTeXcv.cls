@@ -114,16 +114,16 @@
 	\end{itemize}
 }
 
-%% \begin{lltxProItemize}[Job title]{Compagny}{Time period}{Location}
+%% \begin{lltxJob}[Job title]{Compagny}{Time period}{Location}
 %%		\item description
 %%		\item some other description
-%% \end{lltxProItemize}
+%% \end{lltxJob}
 %% inspired from https://github.com/treyhunner/resume/blob/master/resume.cls
 %% #1: job title, optional, between []
 %% #2: compagny
 %% #3: time period
 %% #4: location
-\NewEnviron{lltxProItemize}[4][]{
+\NewEnviron{lltxJob}[4][]{
 	% leave an empty line for the linejump, yup it is ugly
 
 	\vspace{4px}
@@ -138,20 +138,6 @@
 		\BODY
 	\end{itemize}
 }
-
-\newenvironment{lltxProItemizeTest}[4][]{
-
-	#2 \lltxdotfill #3, #4
-	\ifthenelse{\isempty{#1}}{ % if #1 is empty, then 
-	}
-		% do nothing
-	{% else, then
-		\newline \textit{#1}
-	}
-	\begin{itemize}}{
-	\end{itemize}
-}
-
 
 %% \NTS{Note to self}
 %% Display bold red notes directly in the document, like "Add this" or "Change that".
