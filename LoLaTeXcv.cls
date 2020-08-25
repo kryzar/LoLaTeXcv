@@ -127,7 +127,7 @@
 	% leave an empty line for the linejump, yup it is ugly
 
 	\vspace{4px}
-	#2 \lltxdotfill #3 $\circ$#4
+	#2 \lltxdotfill #3 $\cdot$#4
 	\ifthenelse{\isempty{#1}}{ % if #1 is empty, then 
 	}
 		% do nothing
