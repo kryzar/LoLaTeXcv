@@ -10,7 +10,7 @@
 \LoadClass[11pt, a4paper, oneside]{report}
 
 % PACKAGES
-\RequirePackage[left=40px, top=70px, right=40px, bottom=70px]{geometry}
+\RequirePackage[left=45px, top=70px, right=45px, bottom=70px]{geometry}
 \RequirePackage{enumitem}  
 \RequirePackage{environ}
 \RequirePackage{eqparbox}
