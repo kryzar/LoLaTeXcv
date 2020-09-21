@@ -44,6 +44,7 @@ To display your name and personal information (your address, phone number, email
 \documentclass{LoLaTeXcv}
 \includepackage[T1]{fontenc}
 \includepackage[utf8]{inputenc}
+% do not forget Babel
 
 \begin{document}
 
@@ -58,82 +59,81 @@ To display your name and personal information (your address, phone number, email
 \end{document}
 ```
 
-![`lltxPersonalInfo` displayed](Images/PersonalInfo.png)
+![`lltxPersonalInfo` displayed](Images/lltxPersonalInfo.png)
 
-You may now use the other commands and environments! Each command or environment begins with the prefix `lltx` and is explained here. See my own CV ([code](Example.tex) and [pdf](Example.pdf)) for a real life example.
+You may now use the other commands and environments! Each command or environment begins with the prefix `lltx` and is explained here. See [Example.tex](Example.tex) and [Example.pdf](Example.pdf) for usage examples.
 
-### lltxHistory
+### Hierarchy of a LoLaTeXcv curriculum vitae
+
+There are two level of hierarchy : `lltxSection` and `lltxSubSection`, respectively equivalent to `section` and `subsection`. `lltxSection` should be used to organize a curriculum vitae into thematic parts (e.g. Career) and `lltxSubSection` should be used to devide a `lltsSection` into individual components (e.g. `Employment history` and `Education`).
+
+#### A section with `lltxSection`
+
 ```latex
-\begin{lltxHistory}{Section title}
-	\item[Item title] item description \lltxdotfill Additional info
-	% more items
-	% or 
-	\item[Item title] item description % and no \lltxdotfill and Additional info
-\end{lltxHistory}
+\lltxSection{Section title}
 ```
 
-The `lltwHistory` environment is best suited for education and employment history. Item descriptions are horizontally aligned and anything written after `\lltxdotfill` is pushed to the end of the line. Here is an example from my own curriculum vitae.
+![A simple example of `lltxSection`](Images/lltxSection.png)
+
+#### A subsection with `lltxSubSection`
 
 ```latex
-\begin{lltxHistory}{Cursus}
-	\item[2019-2020] M1 de mathématiques \lltxdotfill Sorbonne Université
-	\item[2018-2019] L3 de mathématiques, mention bien \lltxdotfill Sorbonne Université
-	\item[2017] Erasmus+ (premier semestre) \lltxdotfill Université d'Oslo (Norvège)
-	\item[2015-2018] licence de mécanique, mention bien \lltxdotfill Sorbonne Université
-	\item[2015-2018] licence de musicologie, mention assez bien \lltxdotfill Sorbonne Université
-	\item[2015] Bac S, spécialité mathématiques, mention très bien \lltxdotfill Lycée Rocroy St-Vincent de Paul
-\end{lltxHistory}
-```
-!['Education history with `lltxHistory`](Images/EducationHistory.png)
-
-This environment is very adaptive and can be used without `\lltxdotfill`, for example to organize your content as a list of subsections. This is what I do for computer skills.
-
-```latex
-\begin{lltxHistory}{Informatique}
-	\item[Programmation]C++, C, Python \& Numpy, Sage, Pari/GP, Octave/Matlab, HTML/CSS/JavaScript
-	\item[Outils]Git, neovim, \LaTeX, Bash/zsh, Anki, Gnuplot, Pandoc, XCode, ffmpeg
-	\item[Systèmes]GNU/Linux (bases, terminal), macOS (usage avancé), Windows (bases)
-\end{lltxHistory}
+\lltxSubSection{SubSection title}
 ```
 
-!['Computer skills with `lltxHistory`](Images/ComputerSkills.png)
+![A simple example of `lltxSubSection`](Images/lltxSubSection.png)
 
-### lltxItemize
+### LoLaTeXcv environments
+
+Each and everyone of these environments should be preceded by a title made with `lltxSubSection`.
+
+#### An employment history with `lltxJob`
 
 ```latex
-\begin{lltxItemize}{Section title}
-	\item item description
-	% more items
+\begin{lltxJob}[Job title]{
+		Compagny}{
+		Dates}{
+		Place}
+	\item Descriptive item.
+	% more descriptive items
+\end{lltxJob}
+```
+
+The `lltxJob` environment is best suited for education and employment history. Item descriptions are horizontally aligned and anything written after `\lltxdotfill` is pushed to the end of the line. Here is an example.
+
+!['Education history with `lltxJob`](Images/lltxJob1.png)
+
+This environment is very adaptive and can be used without `\lltxdotfill`, for example to organize your content as a list of subsections. Here is an example.
+
+!['Computer skills with `lltxJob`](Images/lltxJob2.png)
+
+#### An itemize with `lltxItemize`
+
+```latex
+\begin{lltxItemize}
+	\item Descriptive item.
+	% more descriptive items
 \end{lltxItemize}
 ```
 
-The `lltxItemize`environment is a modified `itemize` environment. It has a title, uses bullets as symbols and has no indentation. As an example, here is the list of mathematics books I read outside of my degrees.
-
-```latex
-\begin{lltxItemize}{Lectures assidues}
-	\item{\textit{Algèbre et théories galoisiennes}, R. et A. Douady : Théorème de Zorn, Catégories et foncteurs}
-	\item{\textit{Algèbre : le grand combat}, G. Berhuy : théorie de Galois}
-	\item{\textit{Carmichael ideals in number rings}, G. A. Steele, Journal of Number Theory : en entier}
-	\item{\textit{Cours d'algèbre}, M. Demazure : Corps finis}
-	\item{Challenges https://www.mathraining.be : niveau \textit{Compétent}}
-	\item{\textit{Cryptography I}, D. Boneh, cours au MIT : Stream ciphers, Block ciphers}
-	\item{\textit{Raisonnements divins}, M. Aigner, M. G. Ziegler : Théorie des nombres}
-\end{lltxItemize}
-```
+Use the `lltxItemize` environment instead of the standard `itemize` environment. Here is an example.
 
 ![A simple example of `lltxItemize`](Images/lltxItemize.png)
 
-### lltxTitle
+#### A description with `lltxDescription`
 
 ```latex
-\lltxTitle{Big section title}
+\begin{lltxDescription}
+	\item[Item title] Descriptive item. \lltxdotfill Additional info
+	% More descriptive items.
+	% or 
+	\item[Item title] Descriptive item. % and no \lltxdotfill and Additional info
+\end{lltxDescription}
 ```
 
-The `lltxTitle` command<sup>This is where the fun begins.</sup> was created to organize a curriculum vitae into thematic parts. This is what I came up with in my curriculum vitae : *Learning*, *Involvement* and *Miscellanea*. It is optional and should be used carefully. Use it because it is relevant, not because it is sexy. This is how it is displayed.
+Use the `lltxDescription` environment instead of the standard `description` environment. Here is an example.
 
-![A simple example of `lltxTitle`](Images/lltxTitle.png)
-
-See my CV to view the result "in the text".
+![A simple example of `lltxDescription`](Images/lltxDescription.png)
 
 ### Notes
 
@@ -143,7 +143,7 @@ See my CV to view the result "in the text".
 ### Warnings
 
 - If you need more sophisticated sections, such as a complex employment history, I suggest you give [Trey Hunner's *curriculum vitae* class](https://github.com/treyhunner/resume) a try. 
-- You should avoid jumping lines in `lltxHistory` — the alignments will be mediocre at best. If you find a better implementation of `lltxHistory`, that is one that would allow line jumps in the *item description* while still having the *Additional info* on the top right of the item, please contact me or make a pull request so you can contribute.
+- You should avoid jumping lines in `lltxDescription` — the alignments will be mediocre at best. If you find a better implementation of `lltxDescription`, that is one that would allow line jumps in the `Descriptive item.` while still having the *Additional info* on the top right of the item, please contact me or make a pull request so you can contribute.
 
 ## Authors
 - Antoine Hugounet : myself, creator of this repo.
