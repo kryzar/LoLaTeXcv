@@ -143,7 +143,7 @@ Use the `lltxDescription` environment instead of the standard `description` envi
 ### Warnings
 
 - If you need more sophisticated sections, such as a complex employment history, I suggest you give [Trey Hunner's *curriculum vitae* class](https://github.com/treyhunner/resume) a try. 
-- You should avoid jumping lines in `lltxDescription` — the alignments will be mediocre at best. If you find a better implementation of `lltxDescription`, that is one that would allow line jumps in the `Descriptive item.` while still having the *Additional info* on the top right of the item, please contact me or make a pull request so you can contribute.
+- If you use `lltxDescription`, you need to compile twice.
 
 ## Authors
 - Antoine Hugounet : myself, creator of this repo.
@@ -155,4 +155,5 @@ This project is licensed under the GNU General Public License v3.0 - see the [LI
 ## Acknowledgements
 - [Florian Dupeyron](https://github.com/fdmysterious) for his numerous advices and the gigantic quantity of time he spent helping me on various projects, including this one.
 - Lola Lanier for helping me correcting many typos and giving her wonderful name to this template.
+- [thiswillbeyourgithub](https://github.com/thiswillbeyourgithub) for his ~~shity~~ funny ideas for [Example.pdf](Example.pdf).
 - John Frusciante for his [voice](https://youtu.be/bFLs9mi6TK0?t=215) and [music](https://www.youtube.com/watch?v=-G2n6UqOWIo).
