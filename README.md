@@ -4,7 +4,7 @@
 class, and might be great for you if you like organizing your curriculum vitae
 using lists.
 
-[![](Images/Overview.png)](Example.pdf)
+[![](.images/Overview.png)](Example.pdf)
 
 ### Table of contents
 
@@ -99,7 +99,7 @@ email address or anything else), use the `lltxPersonalInfo`.
 \end{document}
 ```
 
-![`lltxPersonalInfo` displayed](Images/lltxPersonalInfo.png)
+![`lltxPersonalInfo` displayed](.images/lltxPersonalInfo.png)
 
 You may now use the other commands and environments! Each command or
 environment begins with the prefix `lltx` and is explained here. See
@@ -119,7 +119,7 @@ components (e.g. `Employment history` and `Education`).
 \lltxSection{Section title}
 ```
 
-![A simple example of `lltxSection`](Images/lltxSection.png)
+![A simple example of `lltxSection`](.images/lltxSection.png)
 
 #### A subsection with `lltxSubSection`
 
@@ -127,7 +127,7 @@ components (e.g. `Employment history` and `Education`).
 \lltxSubSection{SubSection title}
 ```
 
-![A simple example of `lltxSubSection`](Images/lltxSubSection.png)
+![A simple example of `lltxSubSection`](.images/lltxSubSection.png)
 
 ### LoLaTeXcv environments
 
@@ -150,12 +150,12 @@ The `lltxJob` environment is best suited for education and employment history.
 Item descriptions are horizontally aligned and anything written after
 `\lltxdotfill` is pushed to the end of the line. Here is an example.
 
-!['Education history with `lltxJob`](Images/lltxJob1.png)
+!['Education history with `lltxJob`](.images/lltxJob1.png)
 
 This environment is very adaptive and can be used without `\lltxdotfill`, for
 example to organize your content as a list of subsections. Here is an example.
 
-!['Computer skills with `lltxJob`](Images/lltxJob2.png)
+!['Computer skills with `lltxJob`](.images/lltxJob2.png)
 
 #### An itemize with `lltxItemize`
 
@@ -169,7 +169,7 @@ example to organize your content as a list of subsections. Here is an example.
 Use the `lltxItemize` environment instead of the standard `itemize`
 environment. Here is an example.
 
-![A simple example of `lltxItemize`](Images/lltxItemize.png)
+![A simple example of `lltxItemize`](.images/lltxItemize.png)
 
 #### A description with `lltxDescription`
 
@@ -185,7 +185,7 @@ environment. Here is an example.
 Use the `lltxDescription` environment instead of the standard `description`
 environment. Here is an example.
 
-![A simple example of `lltxDescription`](Images/lltxDescription.png)
+![A simple example of `lltxDescription`](.images/lltxDescription.png)
 
 ### Notes
 
