@@ -141,4 +141,4 @@
 
 %% \NTS{Note to self}
 %% Display bold red notes directly in the document, like "Add this" or "Change that".
-\newcommand{\NTS}[1]{\textcolor{red}{\textbf{#1}}}
+\newcommand{\NTS}[1]{\textcolor{red}{\textbf{\MakeUppercase{#1}}}}
