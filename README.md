@@ -1,6 +1,6 @@
-# LoLaTeXcv, a curriculum vitae template for LaTeX
+# LoLaTeXcv, a curriculum vitae class for LaTeX
 
-*LoLaTeXcv* is curriculum vitae template for LaTeX. It comes as a single file
+*LoLaTeXcv* is curriculum vitae class for LaTeX. It comes as a single file
 class, and might be great for you if you like organizing your curriculum vitae
 using lists.
 
@@ -214,7 +214,7 @@ Contributors:
   and the gigantic quantity of time he spent helping me on various projects,
   including this one.
 - Lola Lanier for helping me correcting many typos and giving her wonderful
-  name to this template.
+  name to this class.
 - [thiswillbeyourgithub](https://github.com/thiswillbeyourgithub) for his
   ~~shity~~ funny ideas for [Example.pdf](Example.pdf).
 - John Frusciante for his [voice](https://youtu.be/bFLs9mi6TK0?t=215) and

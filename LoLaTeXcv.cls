@@ -1,5 +1,5 @@
 % LoLaTeXcv.cls
-% Antoine Hugounet
+% Kryzar (Antoine Leudière)
 % https://github.com/kryzar/LoLaTeXcv
 % https://www.overleaf.com/learn/latex/Writing_your_own_class
 % https://en.wikibooks.org/wiki/LaTeX/Installing_Extra_Packages#Installing_a_package
