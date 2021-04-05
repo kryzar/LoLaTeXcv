@@ -6,6 +6,25 @@ using lists.
 
 [![](Images/Overview.png)](Example.pdf)
 
+### Table of contents
+
+* [Installation](#installation)
+	* [The easy way](#the-easy-way)
+   	* [The smart way](#the-smart-way)
+* [Usage](#usage)
+	* [Getting started](#getting-started)
+   	* [Hierarchy of a LoLaTeXcv curriculum vitae](#hierarchy-of-a-lolatexcv-curriculum-vitae)
+		* [A section with lltxSection](#a-section-with-lltxsection)
+		* [A subsection with lltxSubSection](#a-subsection-with-lltxsubsection)
+	* [LoLaTeXcv environments](#lolatexcv-environments)
+		* [An employment history with lltxJob](#an-employment-history-with-lltxjob)
+  		* [An itemize with lltxItemize](#an-itemize-with-lltxitemize)
+  		* [A description with lltxDescription](#a-description-with-lltxdescription)
+	* [Notes](#notes)
+* [Contributing](#contributing)
+* [Authors](#authors)
+* [License](#license)
+
 ## Installation
 
 ### The easy way
