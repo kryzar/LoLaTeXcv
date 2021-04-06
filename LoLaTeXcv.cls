@@ -98,7 +98,7 @@
 \newlist{lltxDescription}{description}{1}
 \setlist[lltxDescription]{
     format = \normalfont\lltxDescriptionlabel,
-    labelwidth = 0.3cm+\eqboxwidth{listlabel@\EnumitemId},
+    labelwidth = 0.15cm+\eqboxwidth{listlabel@\EnumitemId},
     leftmargin = !,
 }
 \newcommand\lltxDescriptionlabel[2][l]{\eqmakebox[listlabel@\EnumitemId][#1]{#2}}
