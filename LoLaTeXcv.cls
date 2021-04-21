@@ -46,7 +46,7 @@
 \newcommand{\lltxPersonalInfo}[4]{
 	\begin{center}
 		\vspace{20px}
-		\Huge \textsc{#1}
+		\Huge #1
 		\vspace{20px}
 
 		\normalsize
