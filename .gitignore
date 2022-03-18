@@ -1,6 +1,7 @@
 # Personal
 
-Images/Originals/
+.images/Originals/
+gh-md-toc
 .DS_Store
 
 # TeX
