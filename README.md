@@ -63,8 +63,8 @@ document. This is what your file should look like.
 
 ```latex
 \documentclass{LoLaTeXcv}
-\includepackage[T1]{fontenc}
-\includepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
 % maybe a language package e.g. \usepackage[french]{babel}
 
 \begin{document}
@@ -82,8 +82,8 @@ email address or anything else), use the `lltxPersonalInfo`.
 
 ```latex
 \documentclass{LoLaTeXcv}
-\includepackage[T1]{fontenc}
-\includepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
 % do not forget Babel
 
 \begin{document}
